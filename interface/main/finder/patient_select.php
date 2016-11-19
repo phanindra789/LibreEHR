@@ -526,14 +526,8 @@ var SelectPatient = function (eObj) {
 // For the old layout we load a frameset that also sets up the new pid.
 // The new layout loads just the demographics frame here, which in turn
 // will set the pid and load all the other frames.
-if ($GLOBALS['concurrent_layout']) {
     $newPage = "../../patient_file/summary/demographics.php?set_pid=";
     $target = "document";
-}
-else {
-    $newPage = "../../patient_file/patient_file.php?set_pid=";
-    $target = "top";
-}
 ?>
     objID = eObj.id;
     var parts = objID.split("~");

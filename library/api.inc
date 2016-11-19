@@ -98,7 +98,7 @@ function formUpdate ($tableName, $values, $id, $authorized = "0")
 
 function formJump ($address = "0")
 {
-	$returnurl = $GLOBALS['concurrent_layout'] ? 'encounter_top.php' : 'patient_encounter.php';
+	$returnurl = 'encounter_top.php' ;
 	if ($address == "0")
 		$address = "{$GLOBALS['rootdir']}/patient_file/encounter/$returnurl";
 	echo "\n<script language='Javascript'>top.restoreSession();window.location='$address';</script>\n";

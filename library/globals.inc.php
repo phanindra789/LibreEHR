@@ -15,55 +15,8 @@
 //
 // IF lpr services are installed on Windows this setting will be similar
 // Otherwise configure it as needed (print /d:PRN) might be an option for Windows parallel printers
-
-//  Current supported languages:    // Allow capture of term for translation:
-//   Albanian                       // xl('Albanian')
-//   Amharic                        // xl('Amharic')
-//   Arabic                         // xl('Arabic')
-//   Armenian                       // xl('Armenian')
-//   Bahasa Indonesia               // xl('Bahasa Indonesia')
-//   Bengali                        // xl('Bengali')
-//   Bosnian                        // xl('Bosnian')
-//   Chinese (Simplified)           // xl('Chinese (Simplified)')
-//   Chinese (Traditional)          // xl('Chinese (Traditional)')
-//   Croatian                       // xl('Croatian')
-//   Czech                          // xl('Czech')
-//   Danish                         // xl('Danish')
-//   Dutch                          // xl('Dutch')
-//   English (Indian)               // xl('English (Indian)')
-//   English (Standard)             // xl('English (Standard)')
-//   Estonian                       // xl('Estonian')
-//   Finnish                        // xl('Finnish')
-//   French                         // xl('French (Standard)')
-//   French                         // xl('French (Canadian)')
-//   Georgian                       // xl('Georgian')
-//   German                         // xl('German')
-//   Greek                          // xl('Greek')
-//   Hebrew                         // xl('Hebrew')
-//   Hindi                          // xl('Hindi')
-//   Hungarian                      // xl('Hungarian')
-//   Italian                        // xl('Italian')
-//   Japanese                       // xl('Japanese')
-//   Korean                         // xl('Korean')
-//   Lithuanian                     // xl('Lithuanian')
-//   Marathi                        // xl('Marathi')
-//   Norwegian                      // xl('Norwegian')
-//   Persian                        // xl('Persian')
-//   Polish                         // xl('Polish')
-//   Portuguese (Brazilian)         // xl('Portuguese (Brazilian)')
-//   Portuguese (European)          // xl('Portuguese (European)')
-//   Romanian                       // xl('Romanian')
-//   Russian                        // xl('Russian')
-//   Serbian                        // xl('Serbian')
-//   Sinhala                        // xl('Sinhala')
-//   Slovak                         // xl('Slovak')
-//   Somali                         // xl('Somali')
-//   Spanish (Latin American)       // xl('Spanish (Latin American)')
-//   Spanish (Spain)                // xl('Spanish (Spain)')
-//   Swedish                        // xl('Swedish')
-//   Turkish                        // xl('Turkish')
-//   Ukrainian                      // xl('Ukrainian')
-//   Vietnamese                     // xl('Vietnamese')
+// THIS ONLY WORKS ON SYSTEMS WHERE THE PRINTER AND LibreEHR are installed on the same physical server
+// or LPR is configured to connect to a remote printer service
 
 // OS-dependent stuff.
 if (stristr(PHP_OS, 'WIN')) {
@@ -110,7 +63,6 @@ $USER_SPECIFIC_TABS = array('Appearance',
                             'Calendar',
                             'Connectors');
 $USER_SPECIFIC_GLOBALS = array('default_top_pane',
-                               'concurrent_layout',
                                'css_header',
                                'gbl_pt_list_page_size',
                                'gbl_pt_list_new_window',
@@ -140,8 +92,8 @@ $GLOBALS_METADATA = array(
   //
   'Appearance' => array(
 
-    'default_top_pane' => array(
-      xl('Main Top Pane Screen'),       // descriptive name
+    'default_starting_pane' => array(
+      xl('Main Starting Tab Contents'),       // descriptive name
       array(
         'main_info.php' => xl('Calendar Screen'),
         '../../interface/main/finder/dynamic_finder.php' => xl('Dynamic Finder'),
@@ -152,18 +104,6 @@ $GLOBALS_METADATA = array(
       xl('Type of screen layout')
     ),
 
-    'concurrent_layout' => array(
-      xl('Layout Style'),               // descriptive name
-      array(
-        '0' => xl('Old style layout with no left menu'),
-        '1' => xl('Navigation menu consists of pairs of radio buttons'),
-        '2' => xl('Navigation menu is a tree view'),
-        '3' => xl('Navigation uses a sliding menu'),
-      ),
-      '3',                              // default = tree menu
-      xl('Type of screen layout')
-    ),
-    
     'default_encounter_view' => array(
       xl('Default Encounter View'),     // descriptive name
       array(
@@ -179,13 +119,6 @@ $GLOBALS_METADATA = array(
        'css',
        'style_light.css',
       xl('Pick a CSS theme.')
-    ),
-
-    'gbl_nav_area_width' => array(
-      xl('Navigation Area Width'),
-      'num',
-      '150',
-      xl('Width in pixels of the left navigation frame.')
     ),
 
     'libreehr_name' => array(
@@ -217,12 +150,6 @@ $GLOBALS_METADATA = array(
       xl('Type of columns displayed for patient search results')
     ),
 
-    'gbl_tall_nav_area' => array(
-      xl('Tall Navigation Area'),
-       'bool',                          // data type
-       '0',                             // default = false
-      xl('Navigation area uses full height of frameset')
-    ),
 
     'gbl_nav_visit_forms' => array(
       xl('Navigation Area Visit Forms'),
@@ -318,7 +245,7 @@ $GLOBALS_METADATA = array(
         '50'  =>  '50',
         '100' => '100',
       ),
-       '10',
+      '50',
       xl('Number of patients to display per page in the patient list.')
     ),
 
@@ -472,7 +399,7 @@ $GLOBALS_METADATA = array(
         '1' => xl('MM/DD/YYYY'),
         '2' => xl('DD/MM/YYYY'),
       ),
-       '0',
+      '1',
       xl('Format used to display most dates.')
     ),
 
@@ -521,8 +448,9 @@ $GLOBALS_METADATA = array(
 
     'gbl_currency_symbol' => array(
       xl('Currency Designator'),
-       'text',                          // data type
-       '$',                             // default
+      'text',                           // data type
+      '$',                              // default
+      '€',                             // Euros
       xl('Code or symbol to indicate currency')
     ),
     'age_display_format'=>array(xl('Age Display Format'),
@@ -550,8 +478,6 @@ $GLOBALS_METADATA = array(
       xl('Specific Application'),
       array(
         '0' => xl('None'),
-        '2' => xl('IPPF'),
-        '3' => xl('Weight loss clinic'),
       ),
        '0',                             // default
       xl('Indicator for specialized usage')

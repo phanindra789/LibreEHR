@@ -331,7 +331,6 @@ else {
   $GLOBALS['translate_form_titles'] = true;
   $GLOBALS['translate_document_categories'] = true;
   $GLOBALS['translate_appt_categories'] = true;
-  $GLOBALS['concurrent_layout'] = 2;
   $timeout = 7200;
   $libreehr_name = 'LibreEHR';
   $css_header = "$rootdir/themes/style_default.css";
@@ -352,20 +351,12 @@ else {
 $GLOBALS['restore_sessions'] = 1; // 0=no, 1=yes, 2=yes+debug
 
 // Theme definition.  All this stuff should be moved to CSS.
-//
-if ($GLOBALS['concurrent_layout']) {
- $top_bg_line = ' bgcolor="#dddddd" ';
- $GLOBALS['style']['BGCOLOR2'] = "#dddddd";
- $bottom_bg_line = $top_bg_line;
- $title_bg_line = ' bgcolor="#bbbbbb" ';
- $nav_bg_line = ' bgcolor="#94d6e7" ';
-} else {
- $top_bg_line = ' bgcolor="#94d6e7" ';
- $GLOBALS['style']['BGCOLOR2'] = "#94d6e7";
- $bottom_bg_line = ' background="'.$rootdir.'/pic/aquabg.gif" ';
- $title_bg_line = ' bgcolor="#aaffff" ';
- $nav_bg_line = ' bgcolor="#94d6e7" ';
-}
+//  TODO
+$top_bg_line = ' bgcolor="#dddddd" ';
+$GLOBALS['style']['BGCOLOR2'] = "#dddddd";
+$bottom_bg_line = $top_bg_line;
+$title_bg_line = ' bgcolor="#bbbbbb" ';
+$nav_bg_line = ' bgcolor="#94d6e7" ';
 $login_filler_line = ' bgcolor="#f7f0d5" ';
 $logocode = "<img src='$web_root/sites/" . $_SESSION['site_id'] . "/images/login_logo.png'>";
 $linepic = "$rootdir/pic/repeat_vline9.gif";

@@ -1,3 +1,4 @@
+//TODO: IS THIS USEFUL ANYMORE? tm
 <?php
 require_once("../globals.php");
 ?>

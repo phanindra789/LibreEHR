@@ -1,7 +1,7 @@
 <!-- Form created by Nikolai Vitsyn by 2004/01/23 -->
 <?php
 include_once("../../globals.php");
-$returnurl = $GLOBALS['concurrent_layout'] ? 'encounter_top.php' : 'patient_encounter.php';
+$returnurl = 'encounter_top.php' ;
 ?>
 <html><head>
 <?php html_header_show();?>
@@ -19,11 +19,11 @@ $obj = formFetch("form_bronchitis", $_GET["id"]);
 <br>
 <a href="<?php echo "$rootdir/patient_file/encounter/$returnurl";?>" class="link"
  onclick="top.restoreSession()">[<?php xl('Don\'t Save Changes','e'); ?>]</a>
-<br></br>
+<br><br />
 
-<span class=text><?php xl('Onset of Ilness: ','e'); ?></span><input type=entry name="bronchitis_date_of_illness" value="<?php echo stripslashes($obj{"bronchitis_date_of_illness"});?>" ><br></br>
+<span class=text><?php xl('Onset of Ilness: ','e'); ?></span><input type=entry name="bronchitis_date_of_illness" value="<?php echo stripslashes($obj{"bronchitis_date_of_illness"});?>" ><br><br />
 
-<span class=text><?php xl('HPI:','e'); ?> </span><br><textarea cols=67 rows=8 wrap=virtual name="bronchitis_hpi" ><?php echo stripslashes($obj{"bronchitis_hpi"});?></textarea><br></br>
+<span class=text><?php xl('HPI:','e'); ?> </span><br><textarea cols=67 rows=8 wrap=virtual name="bronchitis_hpi" ><?php echo stripslashes($obj{"bronchitis_hpi"});?></textarea><br><br />
 
 
 <table><th colspan="5">"<?php xl('Other Pertinent Symptoms','e'); ?> ":</th>
@@ -80,7 +80,7 @@ stripslashes($obj{"bronchitis_ops_appearance"});?>" size="15"></td>
 {echo "checked";};?>><span class=text></span><br>
 </tr>
 </table>
-<br></br>
+<br><br />
 
 <table >
 <tr>
@@ -101,7 +101,7 @@ stripslashes($obj{"bronchitis_ops_appearance"});?>" size="15"></td>
 {echo "checked";};?>><span class=text></span><br></td>
 </tr>
 </table>
-<br></br>
+<br><br />
 
 
 <table>
@@ -192,7 +192,7 @@ stripslashes($obj{"bronchitis_ops_appearance"});?>" size="15"></td>
 <td><input type=checkbox name="bronchitis_tms_nares_not_examined" <?php if ($obj{"bronchitis_tms_nares_not_examined"} == "on")
 {echo "checked";};?>><span class=text></span><br>
 </tr></table>
-<br></br>
+<br /><br />
 
 <table>
 <tr>
@@ -250,7 +250,7 @@ stripslashes($obj{"bronchitis_oropharynx_appearance"});?>" size="15"></td>
 {echo "checked";};?>><span class=text></span><br>
 </tr>
 </table>
-<br></br>
+<br><br />
 
 <table>
 <tr>
@@ -300,7 +300,7 @@ stripslashes($obj{"bronchitis_heart_location"});?>" size="15"></td>
 <td><input type=checkbox name="bronchitis_heart_not_examined" <?php if ($obj{"bronchitis_heart_not_examined"} == "on")
 {echo "checked";};?>><span class=text></span><br>
 </tr></table>
-<br></br>
+<br><br />
 
 <table><tr>
 <td width="60"><?php xl('Lungs:','e'); ?> </td>
@@ -380,12 +380,12 @@ stripslashes($obj{"bronchitis_heart_location"});?>" size="15"></td>
 <td><input type=checkbox name="bronchitis_lungs_not_examined" <?php if ($obj{"bronchitis_lungs_not_examined"} == "on")
 {echo "checked";};?>><span class=text></span><br>
 </tr></table>
-<br></br>
+<br><br />
 
-<span class="text"><?php xl('Diagnostic Tests:','e'); ?> </span></br>
+<span class="text"><?php xl('Diagnostic Tests:','e'); ?> </span><br />
 <textarea name="bronchitis_diagnostic_tests" cols ="67" rows="4"  wrap="virtual name">
 <?php echo stripslashes($obj{"bronchitis_diagnostic_tests"});?></textarea>
-<br></br>
+<br><br />
 
 <table><tr>
 <span class="text"><?php xl('Diagnosis: ','e'); ?> </span>
@@ -410,15 +410,15 @@ stripslashes($obj{"diagnosis3_bronchitis_form"});?>" size="40"><br>
 
 <table>   
 <br>
-<span class="text"><?php xl('Additional Diagnosis:','e'); ?>  </span></br>
+<span class="text"><?php xl('Additional Diagnosis:','e'); ?>  </span><br />
 <textarea name="bronchitis_additional_diagnosis" rows="4" cols="67" wrap="virtual name">
 <?php echo stripslashes($obj{"bronchitis_additional_diagnosis"});?></textarea>
-<br></br>
+<br><br />
 
-<span class="text"><?php xl('Treatment: ','e'); ?> </span></br>
+<span class="text"><?php xl('Treatment: ','e'); ?> </span><br />
 <textarea name="bronchitis_treatment" rows="4" cols="67" wrap="virtual name">
 <?php echo stripslashes($obj{"bronchitis_treatment"});?></textarea>
-</br>
+<br />
 
 <a href="javascript:top.restoreSession();document.my_form.submit();" class="link_submit">[<?php xl('Save','e'); ?> ]</a>
 <br>

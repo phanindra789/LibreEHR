@@ -14,7 +14,7 @@
  * @brief This file contains the C_AbstractAnnotate class, used to control smarty.
  */
 
-/* for $GLOBALS['concurrent_layout','encounter','fileroot','pid','srcdir','style','webroot'] 
+/* for $GLOBALS['encounter','fileroot','pid','srcdir','style','webroot']
  * remember that include paths are calculated relative to the including script, not this file.
  * to lock the path to this script (so if called from different scripts) use the dirname(FILE) variable
 */
@@ -48,7 +48,7 @@ abstract class C_AbstractAnnotate extends Controller {
      */
     function C_AbstractAnnotate($template_mod = "annotate") {
     	parent::__construct();
-    	$returnurl = $GLOBALS['concurrent_layout'] ? 'encounter_top.php' : 'patient_encounter.php';
+    	$returnurl = 'encounter_top.php';
     	$this->template_mod = $template_mod;
     	$this->template_dir = $GLOBALS['fileroot'] . "/interface/forms/annotate_diagram/mapdiagram/template/";
     	$this->assign("DONT_SAVE_LINK",$GLOBALS['webroot'] . "/interface/patient_file/encounter/$returnurl");

@@ -58,9 +58,7 @@ $pres = "prescription";
 <dl>
 <dt><span href="coding.php" class="title"><?php xl('Coding','e'); ?></span></dt>
 
-<dd><a class="text" href="superbill_codes.php"
- target="<?php echo $GLOBALS['concurrent_layout'] ? '_parent' : 'Main'; ?>"
- onclick="top.restoreSession()">
+<dd><a class="text" href="superbill_codes.php" target="_parent" onclick="top.restoreSession()">
 <?php xl('Superbill','e'); ?></a></dd>
 
 <?php foreach ($code_types as $key => $value) { ?>

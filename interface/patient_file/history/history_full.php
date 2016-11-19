@@ -251,7 +251,7 @@ $fres = sqlStatement("SELECT * FROM layout_options " .
         <a href="javascript:submit_history();" class='css_button'>
             <span><?php echo htmlspecialchars(xl('Save'),ENT_NOQUOTES); ?></span>
         </a>
-        <a href="history.php" <?php if (!$GLOBALS['concurrent_layout']) echo "target='Main'"; ?> class="css_button" onclick="top.restoreSession()">
+        <a href="history.php" class="css_button" onclick="top.restoreSession()">
             <span><?php echo htmlspecialchars(xl('Back To View'),ENT_NOQUOTES); ?></span>
         </a>
     </div>
