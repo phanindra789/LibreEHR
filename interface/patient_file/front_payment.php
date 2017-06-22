@@ -10,6 +10,7 @@ $fake_register_globals=false;
 $sanitize_all_escapes=true;
 
 require_once("../globals.php");
+require_once $GLOBALS['srcdir'].'/headers.inc.php';
 require_once("$srcdir/acl.inc");
 require_once("$srcdir/patient.inc");
 require_once("$srcdir/billing.inc");
@@ -363,8 +364,7 @@ if ($_POST['form_save'] || $_REQUEST['receipt']) {
 ?>
 
 <title><?php echo xlt('Receipt for Payment'); ?></title>
-<script type="text/javascript" src="<?php echo $GLOBALS['webroot'] ?>/library/js/jquery.js"></script>
-<script type="text/javascript" src="../../library/dialog.js"></script>
+<?php include_js_library("jquery-min-3-1-1/index.js"); ?>
 <script language="JavaScript">
 
 <?php require($GLOBALS['srcdir'] . "/restoreSession.php"); ?>
@@ -495,27 +495,15 @@ $(document).ready(function() {
 }
 </style>
 
-<link rel="stylesheet" href="<?php echo $css_header;?>" type="text/css">
 
 <!-- supporting javascript code -->
-<script type="text/javascript" src="<?php echo $GLOBALS['webroot'] ?>/library/js/jquery.js"></script>
-
-<script type="text/javascript" src="<?php echo $GLOBALS['webroot'] ?>/library/dialog.js"></script>
-
-
-
-<link rel="stylesheet" href="<?php echo $css_header;?>" type="text/css">
-<link rel="stylesheet" type="text/css" href="../../library/js/fancybox/jquery.fancybox-1.2.6.css" media="screen" />
-<style type="text/css">@import url(../../library/dynarch_calendar.css);</style>
-<script type="text/javascript" src="../../library/textformat.js"></script>
-<script type="text/javascript" src="../../library/dynarch_calendar.js"></script>
-<?php include_once("{$GLOBALS['srcdir']}/dynarch_calendar_en.inc.php"); ?>
-<script type="text/javascript" src="../../library/dynarch_calendar_setup.js"></script>
-<script type="text/javascript" src="../../library/dialog.js"></script>
-<script type="text/javascript" src="../../library/js/jquery.1.3.2.js"></script>
-<script type="text/javascript" src="../../library/js/common.js"></script>
-<script type="text/javascript" src="../../library/js/fancybox/jquery.fancybox-1.2.6.js"></script>
-<script type="text/javascript" src="../../library/js/jquery.easydrag.handler.beta2.js"></script> 
+<?php 
+   include_css_library("fancybox/jquery.fancybox-1.2.6.css");
+   include_js_library("jquery-min-3-1-1/index.js");
+   include_js_library("fancybox/jquery.fancybox-1.2.6.js");
+?>
+<script type="text/javascript" src="<?php echo $GLOBALS['webroot'] ?>/library/js/common.js"></script>
+<script type="text/javascript" src="<?php echo $GLOBALS['webroot'] ?>/library/js/jquery.easydrag.handler.beta2.js"></script> 
 <script language='JavaScript'>
  var mypcc = '1';
 </script>
@@ -524,7 +512,7 @@ $(document).ready(function() {
 document.onclick=HideTheAjaxDivs;
 </script>
 
-<script type="text/javascript" src="../../library/topdialog.js"></script>
+<script type="text/javascript" src="<?php echo $GLOBALS['webroot'] ?>/library/topdialog.js"></script>
 
 <script language="JavaScript">
 <?php require($GLOBALS['srcdir'] . "/restoreSession.php"); ?>
