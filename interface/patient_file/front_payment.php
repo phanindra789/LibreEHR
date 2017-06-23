@@ -365,6 +365,7 @@ if ($_POST['form_save'] || $_REQUEST['receipt']) {
 
 <title><?php echo xlt('Receipt for Payment'); ?></title>
 <?php include_js_library("jquery-min-3-1-1/index.js"); ?>
+<script type="text/javascript" src="<?php echo $GLOBALS['webroot'] ?>/library/dialog.js"></script>
 <script language="JavaScript">
 
 <?php require($GLOBALS['srcdir'] . "/restoreSession.php"); ?>
@@ -504,9 +505,6 @@ $(document).ready(function() {
 ?>
 <script type="text/javascript" src="<?php echo $GLOBALS['webroot'] ?>/library/js/common.js"></script>
 <script type="text/javascript" src="<?php echo $GLOBALS['webroot'] ?>/library/js/jquery.easydrag.handler.beta2.js"></script> 
-<script language='JavaScript'>
- var mypcc = '1';
-</script>
 <?php include_once("{$GLOBALS['srcdir']}/ajax/payment_ajax_jav.inc.php"); ?>
 <script language="javascript" type="text/javascript">
 document.onclick=HideTheAjaxDivs;
