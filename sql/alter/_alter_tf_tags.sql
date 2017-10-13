@@ -1,0 +1,5 @@
+
+ALTER TABLE `tf_tags`
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `tf_tags`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;

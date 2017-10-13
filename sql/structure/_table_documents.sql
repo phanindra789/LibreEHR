@@ -1,0 +1,26 @@
+
+CREATE TABLE `documents` (
+  `id` int(11) NOT NULL DEFAULT '0',
+  `type` enum('file_url','blob','web_url') DEFAULT NULL,
+  `size` int(11) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  `mimetype` varchar(255) DEFAULT NULL,
+  `pages` int(11) DEFAULT NULL,
+  `owner` int(11) DEFAULT NULL,
+  `revision` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `foreign_id` int(11) DEFAULT NULL,
+  `docdate` date DEFAULT NULL,
+  `hash` varchar(40) DEFAULT NULL COMMENT '40-character SHA-1 hash of document',
+  `list_id` bigint(20) NOT NULL DEFAULT '0',
+  `couch_docid` varchar(100) DEFAULT NULL,
+  `couch_revid` varchar(100) DEFAULT NULL,
+  `storagemethod` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0->Harddisk,1->CouchDB',
+  `path_depth` tinyint(4) DEFAULT '1' COMMENT 'Depth of path to use in url to find document. Not applicable for CouchDB.',
+  `imported` tinyint(4) DEFAULT '0' COMMENT 'Parsing status for CCR/CCD/CCDA importing',
+  `encounter_id` bigint(20) NOT NULL DEFAULT '0' COMMENT 'Encounter id if tagged',
+  `encounter_check` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'If encounter is created while tagging',
+  `audit_master_approval_status` tinyint(4) NOT NULL DEFAULT '1' COMMENT 'approval_status from audit_master table',
+  `audit_master_id` int(11) DEFAULT NULL,
+  `documentationOf` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

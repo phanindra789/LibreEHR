@@ -1,0 +1,25 @@
+
+CREATE TABLE `form_vitals` (
+  `id` bigint(20) NOT NULL,
+  `date` datetime DEFAULT NULL,
+  `pid` bigint(20) DEFAULT '0',
+  `user` varchar(255) DEFAULT NULL,
+  `groupname` varchar(255) DEFAULT NULL,
+  `authorized` tinyint(4) DEFAULT '0',
+  `activity` tinyint(4) DEFAULT '0',
+  `bps` varchar(40) DEFAULT NULL,
+  `bpd` varchar(40) DEFAULT NULL,
+  `weight` float(5,2) DEFAULT '0.00',
+  `height` float(5,2) DEFAULT '0.00',
+  `temperature` float(5,2) DEFAULT '0.00',
+  `temp_method` varchar(255) DEFAULT NULL,
+  `pulse` float(5,2) DEFAULT '0.00',
+  `respiration` float(5,2) DEFAULT '0.00',
+  `note` varchar(255) DEFAULT NULL,
+  `BMI` float(4,1) DEFAULT '0.0',
+  `BMI_status` varchar(255) DEFAULT NULL,
+  `waist_circ` float(5,2) DEFAULT '0.00',
+  `head_circ` float(4,2) DEFAULT '0.00',
+  `oxygen_saturation` float(5,2) DEFAULT '0.00',
+  `external_id` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
